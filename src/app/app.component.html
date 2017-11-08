@@ -14,14 +14,28 @@
                <div ng-controller="logincontrol">
 
           Username <input ng-model="Fname"  (blur)="validation(Fname.value)" placeholder="Fristname" #Fname ><br>
-            <span id="errfn" ></span>
+          
+           <br>
             Password <input ng-model="pword"  (blur)="validation1(pword.value)" placeholder="password" #pword ><br>
             </div>
 
             <div ng-controller="myCtrl">
                 <button ng-click="myFunc()">Submit</button>
-                <p>The button has been clicked {{count}} times.</p>
+                <p>{{str}}</p>
             </div>
+
+
+            <form name="form">
+                <div ng-hide="isShow">
+                    User Name  <input type="text" required ng-model="userName" /><br /><br />
+                    Password <input type="password" required ng-model="password" /><br /><br />
+                    <input type="button" ng-disabled="form.$invalid" ng-click="isShow = true" value="Login" />
+                </div>
+                <div ng-show="isShow">
+                    Successfully Login.<br />
+                    <input type="button" ng-click="isShow = false;password='';userName=''" value="Logout" />
+                </div>
+            </form>
        
 
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import * as angular from "angular";
+//import * as angular from "angular";
+//declare var angular: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,15 +21,28 @@ export class AppComponent  {
     this.language1 = language;
     console.log(this.place1, this.language1);
   }
-  myFunc()
+  validation(Fname: string)
+  {
+this.name=Fname;
+console.log(this.name);
+  }
+  validation1(pword: string)
+  {
+this.pass=pword;
+console.log(this.pass);
+  }
+
+
+ /* myFunc()
   {
   angular.module('myApp', [])
   .controller('myCtrl', ['$scope', function($scope) {
-      $scope.count = 0;
-      $scope.myFunc = function() {
-          $scope.count++;
+      $scope.str=1;
+      $scope.myFunc = function() 
+      {
+        $scope.str++;
       };
   }]);
 
-  }
+  }*/
 }
